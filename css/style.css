@@ -1,0 +1,96 @@
+/* css/style.css
+ *
+ * Basic responsive styling for the demo site.
+ * Keep styles minimal so they work on many free hosting providers.
+ */
+
+:root{
+  --bg:#f7f9fc;
+  --card:#ffffff;
+  --accent:#0057ff;
+  --muted:#6b7280;
+  --max-width:980px;
+}
+
+*{box-sizing:border-box}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin:0;
+  background:var(--bg);
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{
+  width:95%;
+  max-width:var(--max-width);
+  margin:24px auto;
+  padding:12px;
+}
+
+.site-header{
+  text-align:center;
+  padding:32px 12px;
+  background:linear-gradient(90deg,#fff 0%, #f1f5f9 100%);
+  border-bottom:1px solid #e6edf3;
+}
+.site-header h1{margin:0 0 6px;font-size:1.6rem}
+.site-header .lead{margin:0;color:var(--muted);font-size:0.95rem}
+
+.upload-section, .list-section {
+  background: var(--card);
+  padding:16px;
+  margin:16px 0;
+  border-radius:8px;
+  box-shadow: 0 1px 2px rgba(16,24,40,0.04);
+}
+
+/* Form fields */
+.field{display:block;margin:10px 0}
+.field span{display:block;color:var(--muted);font-size:0.9rem;margin-bottom:6px}
+.field input[type="file"]{display:block}
+.field input[type="text"], .field input[type="password"]{
+  width:100%;
+  padding:8px 10px;
+  border:1px solid #e6edf3;
+  border-radius:6px;
+  background:#fff;
+}
+
+button, .download-btn{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  padding:10px 14px;
+  border-radius:6px;
+  text-decoration:none;
+  cursor:pointer;
+}
+button:hover, .download-btn:hover{opacity:0.95}
+
+/* Progress */
+.progress{background:#e6eefc;border-radius:8px;height:10px;margin-top:10px;overflow:hidden}
+.progress-bar{background:linear-gradient(90deg,var(--accent),#6ea8ff);height:100%;}
+
+/* files list */
+.files-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.file-card{background:#fafbff;border:1px solid #eef3ff;padding:12px;border-radius:8px}
+.file-card h3{margin:0;font-size:1rem}
+.file-card p{margin:6px 0;color:var(--muted);font-size:0.9rem}
+.file-actions{margin-top:8px}
+.file-actions a{margin-right:8px;text-decoration:none;color:var(--accent)}
+
+/* preview page */
+.preview .video-wrapper{margin:12px 0}
+.meta{margin-top:12px;color:var(--muted)}
+
+/* footer */
+.site-footer{text-align:center;padding:12px 0;color:var(--muted);font-size:0.85rem}
+
+/* Responsive tweaks */
+@media (max-width:600px){
+  .site-header h1{font-size:1.25rem}
+  .files-list{grid-template-columns:1fr}
+}
