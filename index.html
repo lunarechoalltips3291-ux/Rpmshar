@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rpmshar - Free Video Hosting (Demo)</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Rpmshar — Free Video Hosting</h1>
+    <p class="lead">Upload and share videos easily. This demo is PHP-based and works on basic shared hosting.</p>
+  </header>
+
+  <main class="container">
+    <section class="upload-section">
+      <h2>Upload a Video</h2>
+
+      <!-- Upload form posts to upload.php. Uses AJAX (script.js) to show progress. -->
+      <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
+        <label class="field">
+          <span>Choose video</span>
+          <input type="file" name="video" id="videoInput" accept="video/*" required>
+        </label>
+
+        <label class="field">
+          <span>Optional title</span>
+          <input type="text" name="title" id="titleInput" placeholder="My holiday clip">
+        </label>
+
+        <label class="field">
+          <span>Optional download password (leave empty for public)</span>
+          <input type="text" name="password" id="passwordInput" placeholder="set a password to protect downloads">
+        </label>
+
+        <button type="submit" id="uploadBtn">Upload</button>
+
+        <div id="progressWrapper" class="progress" style="display:none;">
+          <div id="progressBar" class="progress-bar" style="width:0%"></div>
+        </div>
+
+        <div id="uploadResult" class="result"></div>
+      </form>
+    </section>
+
+    <section class="list-section">
+      <h2>Uploaded Videos</h2>
+      <div id="filesList" class="files-list">
+        <!-- Populated by js/script.js from metadata.json -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Made for demonstration. Remember to configure PHP upload limits if you plan large files.</small>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
